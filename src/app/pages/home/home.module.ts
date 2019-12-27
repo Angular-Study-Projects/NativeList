@@ -5,6 +5,8 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 import { ListComponent } from "~/app/components/list/list.component";
 import { SearchBarComponent } from "~/app/components/searchbar/searchbar.component";
+import { BreadCrumbComponent } from "~/app/components/breadcrumb/breadcrumb.component";
+import { ButtonsComponent } from "~/app/components/buttons/buttons.component";
 
 @NgModule({
     imports: [
@@ -14,7 +16,9 @@ import { SearchBarComponent } from "~/app/components/searchbar/searchbar.compone
     declarations: [
         HomeComponent,
         ListComponent,
-        SearchBarComponent
+        SearchBarComponent,
+        BreadCrumbComponent,
+        ButtonsComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

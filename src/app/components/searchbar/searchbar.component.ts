@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef, OnChanges } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { SearchBar } from "tns-core-modules/ui/search-bar";
 import { ListService } from "~/app/service/list.service";
 import { Folder } from "~/app/service/folder";
@@ -30,7 +30,6 @@ export class SearchBarComponent implements OnInit {
     ngOnInit(): void {
     }
 
-
     onSubmit(args) {
         const searchBar = args.object as SearchBar;
         console.log(`Searching for ${searchBar.text}`);
@@ -39,11 +38,10 @@ export class SearchBarComponent implements OnInit {
     onTextChanged(args) {
         const searchBar = args.object as SearchBar;
         
-
         setTimeout(()=> {
             let text = searchBar.text;
 
-            this.myList = this.listService.filter( text )
+            this.listService.filter( text )
 
         }, 100)
 
@@ -56,8 +54,5 @@ export class SearchBarComponent implements OnInit {
         const searchBar = args.object as SearchBar;
         console.log(`Clear event raised`);
     }
-    
-
-
 
 }

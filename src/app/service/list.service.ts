@@ -27,22 +27,23 @@ export class ListService {
 
 
     filter(text: string) {
-        if( text != "" ) {
-            this.myList = [... this.folderList.filter( it => {
+        // if( text != "" ) {
+        //     this.myList = [... this.folderList.filter( it => {
                 
-                if(it.title.toLowerCase().startsWith(text.toLowerCase())) {
-                    // this.noResult = false;
-                    console.log(text.toLowerCase())
+        //         if(it.title.toLowerCase().startsWith(text.toLowerCase())) {
+        //             // this.noResult = false;
+        //             console.log(text.toLowerCase())
 
-                    return it.title.toLowerCase().startsWith(text.toLowerCase())
-                }
+        //             return it.title.toLowerCase().startsWith(text.toLowerCase())
+        //         }
             
-            })]
-        }
-        else{
-            this.myList = [... this.folderList]
-        }
-        return this.myList
+        //     })]
+        // }
+        // else{
+        //     this.myList = [... this.folderList]
+        // }
+        // return this.myList
+        console.log("filtering: " + text)
     }
 
 
