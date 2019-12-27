@@ -13,9 +13,16 @@ import { Folder } from "./folder";
 @Injectable({providedIn: 'root'})
 export class ListService {
 
+    folderList: Folder[] = []
+    listSize: number = 20;
 
+    constructor(){
 
+        for(let i = 0; i < this.listSize; i++) {
+            this.folderList.push( {title: 'Title ' + i, date: Date.now()} )
+        }
 
+    }
 
 
     // folderBtn:boolean = false;

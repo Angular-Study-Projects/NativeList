@@ -1,4 +1,4 @@
 export interface Folder {
     title: string;
-    data: string;
+    date: number;
 }

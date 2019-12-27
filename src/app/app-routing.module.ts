@@ -7,7 +7,7 @@ import { ItemDetailComponent } from "./item/item-detail.component";
 import { ListComponent } from "./components/list/list.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/items", pathMatch: "full" },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "items", component: ItemsComponent },
     { path: "item/:id", component: ItemDetailComponent },
     { path: "home", component: ListComponent }

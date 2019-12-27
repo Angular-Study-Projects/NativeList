@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ListService } from "~/app/service/list.service";
+import { Folder } from "~/app/service/folder";
 
 
 @Component({
@@ -9,12 +11,13 @@ import { Component, OnInit } from "@angular/core";
 
 export class ListComponent implements OnInit {
 
-    constructor(){
+    myList: Folder[];
+
+    constructor( private listService: ListService ){
     }
 
-
     ngOnInit(): void {
-
+        this.myList = this.listService.folderList;
     }
 
 }
