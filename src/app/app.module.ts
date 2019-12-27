@@ -4,10 +4,10 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ItemsComponent } from "./item/items.component";
-import { ListComponent } from "./components/list/list.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
+import { HomeModule } from "./pages/home/home.module";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -22,13 +22,13 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
     imports: [
         NativeScriptUISideDrawerModule,
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HomeModule
     ],
     declarations: [
         AppComponent,
         ItemsComponent,
         ItemDetailComponent,
-        ListComponent
     ],
     providers: [],
     schemas: [

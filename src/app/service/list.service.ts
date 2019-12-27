@@ -15,6 +15,7 @@ export class ListService {
 
     folderList: Folder[] = []
     listSize: number = 20;
+    myList: Folder[]=[]
 
     constructor(){
 
@@ -22,6 +23,26 @@ export class ListService {
             this.folderList.push( {title: 'Title ' + i, date: Date.now()} )
         }
 
+    }
+
+
+    filter(text: string) {
+        if( text != "" ) {
+            this.myList = [... this.folderList.filter( it => {
+                
+                if(it.title.toLowerCase().startsWith(text.toLowerCase())) {
+                    // this.noResult = false;
+                    console.log(text.toLowerCase())
+
+                    return it.title.toLowerCase().startsWith(text.toLowerCase())
+                }
+            
+            })]
+        }
+        else{
+            this.myList = [... this.folderList]
+        }
+        return this.myList
     }
 
 
