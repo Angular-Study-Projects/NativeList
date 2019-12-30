@@ -2,19 +2,11 @@ import { Injectable } from "@angular/core";
 import { Folder } from "./folder";
 
 
-// interface documentTemplate {
-//     title: string;
-//     date: number;
-//     lastModification: number;
-//     option: boolean;
-//     id: number;
-// }
-
 @Injectable({providedIn: 'root'})
 export class ListService {
 
     folderList: Folder[] = []
-    listSize: number = 20;
+    listSize: number = 1;
     myList: Folder[]=[]
 
     id: number = 0;
@@ -24,31 +16,22 @@ export class ListService {
         for(let i = 0; i < this.listSize; i++) {
             this.folderList.push( {title: 'Title ' + ++this.id, date: Date.now()} )
         }
+        this.myList = [... this.folderList];
 
     }
 
     filter(text: string) {
-        // if( text != "" ) {
-        //     this.myList = [... this.folderList.filter( it => {
-                
-        //         if(it.title.toLowerCase().startsWith(text.toLowerCase())) {
-        //             // this.noResult = false;
-        //             console.log(text.toLowerCase())
-
-        //             return it.title.toLowerCase().startsWith(text.toLowerCase())
-        //         }
-            
-        //     })]
-        // }
-        // else{
-        //     this.myList = [... this.folderList]
-        // }
-        // return this.myList
-        console.log("filtering: " + text)
+        if( text != "" ) {
+            this.myList = [... this.folderList.filter( it => { it.title.toLowerCase().startsWith(text.toLowerCase()) })]
+        }
+        else{
+            this.myList = [... this.folderList]
+        }
     }
 
     add(_title:string, _date:number) {
         this.folderList.push({title: _title + " " + ++this.id, date: _date})
+        this.myList = [... this.folderList];
     }
 
 

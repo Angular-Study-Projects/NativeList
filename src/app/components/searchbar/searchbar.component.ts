@@ -39,7 +39,7 @@ export class SearchBarComponent implements OnInit {
 
         // console.log(this.noResult)
 
-        console.log(`Input changed! New value: ${searchBar.text}`);
+        // console.log(`Input changed! New value: ${searchBar.text}`);
     }
 
     onClear(args) {

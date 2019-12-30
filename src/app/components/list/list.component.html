@@ -1,12 +1,24 @@
-<ListView [items]="myList">
-    <ng-template let-folder="item" let-index="index">
-        <GridLayout columns="auto,*,auto" rows="*,*">
-            <Image src="res://icon" width="50" column="0" row="0" rowSpan="2"></Image>
+<StackLayout>
 
-            <Label [text]="folder.title" column="1" row="0"></Label>
-            <Label [text]="folder.date | date:'medium'" column="1" row="1"></Label>
+    <SearchBar 
+        hint="Buscar arquivos ou pastas"
+        [text]="searchPhrase" (textChange)="onTextChanged($event)" 
+        (clear)="onClear($event)" (submit)="onSubmit($event)">
+    </SearchBar>
 
-            <Image class="ellipsis" src="res://ellipsish" width="50" column="3" row="0" rowSpan="2"></Image>
-        </GridLayout>
-    </ng-template>
-</ListView>
+    <breadcrumb-component></breadcrumb-component>
+
+    <ListView [items]="myList">
+        <ng-template let-folder="item" let-index="index">
+            <GridLayout columns="auto,*,auto" rows="*,*">
+                <Image src="res://icon" width="50" column="0" row="0" rowSpan="2"></Image>
+
+                <Label [text]="folder.title" column="1" row="0"></Label>
+                <Label [text]="folder.date | date:'medium'" column="1" row="1"></Label>
+
+                <Image class="ellipsis" src="res://ellipsish" width="50" column="3" row="0" rowSpan="2"></Image>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+
+</StackLayout>
