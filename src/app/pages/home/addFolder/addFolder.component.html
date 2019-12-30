@@ -11,5 +11,9 @@
         </TextField>
 
         <Button (tap)="saveFolder()" text="Salvar Pasta"></Button>
+
+        <Label class="fail" *ngIf="invalidInput" text="Título nao pode estar em branco"></Label>
+
+        <Label class="success" *ngIf="isCreated" text="Pasta Criada com sucesso"></Label>
     </StackLayout>
 </FlexboxLayout>
