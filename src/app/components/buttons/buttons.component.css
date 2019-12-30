@@ -1,8 +1,4 @@
-GridLayout {
-    word-wrap: break-word;
-}
-
 Label {
-    font-size: 13;
+    font-size: 10;
     text-transform: uppercase;
 }
