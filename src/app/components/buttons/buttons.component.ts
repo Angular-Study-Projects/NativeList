@@ -18,5 +18,8 @@ export class ButtonsComponent implements OnInit {
     }
 
 
+    addFolder() {
+        this.listService.add()
+    }
 
 }

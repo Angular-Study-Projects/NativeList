@@ -17,14 +17,15 @@ export class ListService {
     listSize: number = 20;
     myList: Folder[]=[]
 
+    id: number = 0;
+
     constructor(){
 
         for(let i = 0; i < this.listSize; i++) {
-            this.folderList.push( {title: 'Title ' + i, date: Date.now()} )
+            this.folderList.push( {title: 'Title ' + ++this.id, date: Date.now()} )
         }
 
     }
-
 
     filter(text: string) {
         // if( text != "" ) {
@@ -44,6 +45,10 @@ export class ListService {
         // }
         // return this.myList
         console.log("filtering: " + text)
+    }
+
+    add(_title:string, _date:number) {
+        this.folderList.push({title: _title + " " + ++this.id, date: _date})
     }
 
 

@@ -1,0 +1,15 @@
+<ActionBar title="Adicoinar nova pasta"></ActionBar>
+
+<FlexboxLayout flexDirection="column">
+    <StackLayout rows="*,*" class="m-15">
+        <Label text="Title"></Label>
+        
+        <TextField hint="Enter text"
+                [text]="title"  
+                (textChange)="update($event)"
+                backgroundColor="white">
+        </TextField>
+
+        <Button (tap)="saveFolder()" text="Salvar Pasta"></Button>
+    </StackLayout>
+</FlexboxLayout>

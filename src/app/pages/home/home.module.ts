@@ -7,6 +7,7 @@ import { ListComponent } from "~/app/components/list/list.component";
 import { SearchBarComponent } from "~/app/components/searchbar/searchbar.component";
 import { BreadCrumbComponent } from "~/app/components/breadcrumb/breadcrumb.component";
 import { ButtonsComponent } from "~/app/components/buttons/buttons.component";
+import { AddFolderComponent } from "./addFolder/addFolder.component";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ButtonsComponent } from "~/app/components/buttons/buttons.component";
     ],
     declarations: [
         HomeComponent,
+        AddFolderComponent,
         ListComponent,
         SearchBarComponent,
         BreadCrumbComponent,

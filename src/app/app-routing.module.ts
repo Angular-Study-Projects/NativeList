@@ -5,12 +5,14 @@ import { Routes } from "@angular/router";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import { HomeComponent } from "./pages/home/home.component";
+import { AddFolderComponent } from "./pages/home/addFolder/addFolder.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "items", component: ItemsComponent },
     { path: "item/:id", component: ItemDetailComponent },
-    { path: "home", component: HomeComponent }
+    { path: "home", component: HomeComponent },
+    { path: "add", component: AddFolderComponent }
 ];
 
 @NgModule({
