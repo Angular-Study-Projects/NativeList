@@ -1,1 +1,37 @@
-<Label text="asdasdasdasd"></Label>
+<!-- <GridLayout flexDirection="row" justifyContent="space-around" style="height: 40;">
+    
+    <StackLayout>
+        <Image src="res://icon" widht="5%"></Image>
+        <Label text="title"></Label>
+    </StackLayout>
+    
+    <StackLayout>
+        <Image src="res://icon" widht="5%"></Image>
+        <Label text="title"></Label>
+    </StackLayout>
+    
+    <StackLayout>
+        <Image src="res://icon" widht="5%"></Image>
+        <Label text="title"></Label>
+    </StackLayout>
+
+</FlexboxLayout> -->
+
+<GridLayout columns="*,*,*" style="height: 70; border-color: #e8e8e8; border-width: 2" >
+    
+    <GridLayout rows="auto,*" column="0" style="text-align: center; padding: 10 0 0 0">
+        <Image row="0" src="res://icon" style="width: 20%"></Image>
+        <Label row="1" text="minhas pastas"></Label>
+    </GridLayout>
+
+    <GridLayout rows="auto,*" column="1" style="border-color: #e8e8e8;border-right-width: 2; border-left-width: 2; text-align: center; padding: 10 0 0 0">
+        <Image row="0" src="res://icon" style="width: 20%"></Image>
+        <Label row="1" text="compartilhar esta pasta"></Label>
+    </GridLayout>
+
+    <GridLayout rows="auto,*" column="2" style="text-align: center; padding: 10 0 0 0">
+        <Image row="0" src="res://icon" style="width: 20%"></Image>
+        <Label row="1" text="adicionar pasta"></Label>
+    </GridLayout>
+
+</GridLayout>

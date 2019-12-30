@@ -3,15 +3,6 @@ import { SearchBar } from "tns-core-modules/ui/search-bar";
 import { ListService } from "~/app/service/list.service";
 import { Folder } from "~/app/service/folder";
 
-
-interface documentTemplate {
-    title: string;
-    date: number;
-    lastModification: number;
-    option: boolean;
-    id: number;
-}
-
 @Component({
     selector: "search-bar-component",
     templateUrl: "./searchbar.component.html",
@@ -23,6 +14,7 @@ export class SearchBarComponent implements OnInit {
     searchPhrase: string;
     myList: Folder[] = [];
     noResult: boolean;
+
 
     constructor(private listService: ListService){
     }
