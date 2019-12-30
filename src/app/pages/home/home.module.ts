@@ -8,6 +8,7 @@ import { SearchBarComponent } from "~/app/components/searchbar/searchbar.compone
 import { BreadCrumbComponent } from "~/app/components/breadcrumb/breadcrumb.component";
 import { ButtonsComponent } from "~/app/components/buttons/buttons.component";
 
+
 @NgModule({
     imports: [
         NativeScriptCommonModule,
