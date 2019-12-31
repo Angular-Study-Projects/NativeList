@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ListService } from "~/app/service/list.service";
 import { Folder } from "~/app/service/folder";
 import { SearchBar } from "tns-core-modules/ui/search-bar";
+import { Observable } from "rxjs";
 
 
 @Component({
@@ -13,12 +14,15 @@ import { SearchBar } from "tns-core-modules/ui/search-bar";
 export class ListComponent implements OnInit {
 
     myList: Folder[];
+    displayOfData: Observable<any[]>
 
     constructor( private listService: ListService ){
     }
 
     ngOnInit(): void {
         this.myList = this.listService.myList;
+
+        this.displayOfData = this.listService.list
     }
 
     onSearchBarLoaded(event) {

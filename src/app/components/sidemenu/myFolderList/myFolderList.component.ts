@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ListService } from "~/app/service/list.service";
 import { Folder } from "~/app/service/folder";
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';;
 
 
 @Component({
@@ -12,12 +14,17 @@ import { Folder } from "~/app/service/folder";
 export class MyFolderListComponent implements OnInit {
 
     myList: Folder[];
+    displayOfData: Observable<any[]>
 
     constructor( private listService: ListService ){
     }
 
     ngOnInit(): void {
+        // this.displayOfData = this.listService.list
+
         this.myList = this.listService.myList;
+
+        this.displayOfData = this.listService.list.asObservable()
     }
 
 }

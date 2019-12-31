@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Folder } from "./folder";
+import { BehaviorSubject } from "rxjs";
 
 
 @Injectable({providedIn: 'root'})
@@ -7,7 +8,11 @@ export class ListService {
 
     folderList: Folder[] = []
     listSize: number = 1;
-    myList: Folder[]=[]
+    myList: Folder[]=[];
+
+
+    list: BehaviorSubject<Folder[]> = new BehaviorSubject([])
+
 
     id: number = 0;
 
@@ -17,6 +22,10 @@ export class ListService {
             this.folderList.push( {title: 'Title ' + ++this.id, date: Date.now()} )
         }
         this.myList = [... this.folderList];
+
+
+        this.list.next(this.myList)
+        this.list.next(this.myList)
 
     }
 
@@ -32,6 +41,9 @@ export class ListService {
     add(_title:string, _date:number) {
         this.folderList.push({title: _title + " " + ++this.id, date: _date})
         this.myList = [... this.folderList];
+
+        this.list.next(this.myList)
+
     }
 
 
