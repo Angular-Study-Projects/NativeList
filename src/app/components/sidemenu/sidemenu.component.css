@@ -1,3 +1,17 @@
 GridLayout {
     margin-top: 50;
 }
+
+.welcome {
+    font-size: 16;
+    font-weight: bolder;
+}
+.username {
+    font-size: 20;
+    font-weight: bold;
+}
+.my-folders {
+    margin: 5 15; 
+    border-bottom-width: 2;
+    border-color: #ff0000;
+}

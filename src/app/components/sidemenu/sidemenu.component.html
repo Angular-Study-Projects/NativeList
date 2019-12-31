@@ -1,21 +1,31 @@
 <GridLayout rows="auto,auto,*" columns="*,*,*">
 
-    <FlexboxLayout row="0" rowSpan="2" column="0" columnSpan="2" flexDirection="row" alignItems="center" justifyContent="space-around">
+    <FlexboxLayout row="0" rowSpan="2" column="0" columnSpan="3" flexDirection="row" alignItems="center" justifyContent="flex-start">
 
-        <Image src="res://icon" width="50%"></Image>
+        <Image src="res://icon" width="30%"></Image>
 
-        <Label text="Username"></Label>
+        <FlexboxLayout flexDirection="column" alignItems="flex-start" justifyContent="space-around">
+            <Label class="welcome" text="Bem Vindo"></Label>
+            <Label class="username" text="Username"></Label>
+            <Label textWrap="true" text="432 arquivos distribuidos em 45 pastas"></Label>
+        </FlexboxLayout>  
        
     </FlexboxLayout>
-
-    <!-- <Image row="0" column="0" rowSpan="2" src="res://icon" width="50%"></Image>
-
-    <Label row="0" column="1" columnSpan="3" text="Username"></Label> -->
    
     <StackLayout row="2" column="0" columnSpan="3">
+        <Progress value="25" maxValue="100" backgroundColor="red" style="margin: 5 15 0 15;"></Progress>
+        <Label text="USADO 2.5GB DE 15GB" style="margin: 0 15 5 15;"></Label>
+        
+        <Label text="MINHAS PASTAS" class="my-folders"></Label>
+
         <Button text="Home" class="btn" [nsRouterLink]="['/home']"></Button>     
 
         <Button text="Logout" class="btn" [nsRouterLink]="['/items']"></Button> 
+
+        <ScrollView>
+            <my-folder-list-component></my-folder-list-component>    
+        </ScrollView>
+
     </StackLayout>
     
 </GridLayout>

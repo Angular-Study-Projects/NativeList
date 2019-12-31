@@ -8,5 +8,10 @@ import { Component, OnInit } from "@angular/core";
 
 export class SideMenuComponent implements OnInit {
     constructor(){}
-    ngOnInit(){}
+
+    public progressValue: number;
+
+    ngOnInit() {
+        this.progressValue = 25;
+    }
 }
