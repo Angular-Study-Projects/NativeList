@@ -1,6 +1,7 @@
 <StackLayout>
 
     <SearchBar 
+        (loaded)="onSearchBarLoaded($event)"
         hint="Buscar arquivos ou pastas"
         [text]="searchPhrase" (textChange)="onTextChanged($event)" 
         (clear)="onClear($event)" (submit)="onSubmit($event)">

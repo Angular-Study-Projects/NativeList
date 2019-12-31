@@ -21,6 +21,13 @@ export class ListComponent implements OnInit {
         this.myList = this.listService.myList;
     }
 
+    onSearchBarLoaded(event) {
+        if (event.object.android) {
+            event.object.dismissSoftInput();
+            event.object.android.clearFocus();
+            event.object.android.setFocusable(false);
+        }
+    }
 
     onSubmit(args) {
         const searchBar = args.object as SearchBar;
