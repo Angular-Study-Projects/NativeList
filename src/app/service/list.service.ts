@@ -18,7 +18,7 @@ export class ListService {
     constructor(){
 
         for(let i = 0; i < this.listSize; i++) {
-            this.folderList.push( {title: 'Title ' + ++this.id, date: Date.now()} )
+            this.folderList.push( {id: this.id,title: 'Title ' + ++this.id, date: Date.now(), isFavorite: false, options: false} )
         }
         // this.myList = [... this.folderList];
 
@@ -43,9 +43,13 @@ export class ListService {
     }
 
     add(_title:string, _date:number) {
-        this.folderList.push({title: _title + " " + ++this.id, date: _date})
+        this.folderList.push({ id: ++this.id, title: _title, date: _date, isFavorite: false, options: false})
 
         this.myList.next(this.folderList)
 
+    }
+
+    getFolderInfo(id: number): Folder {
+        return this.myList.value.filter((item) => item.id === id)[0];
     }
 }

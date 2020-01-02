@@ -2,13 +2,20 @@
 
     <ListView [items]="displayOfData | async">
         <ng-template let-folder="item" let-index="index">
-            <GridLayout columns="auto,*,auto" rows="*,*">
+            <GridLayout columns="auto,*,auto" rows="*,*" (tap)="showOptions(folder); folder.options=true">
                 <Image src="res://icon" width="50" column="0" row="0" rowSpan="2"></Image>
 
                 <Label [text]="folder.title" column="1" row="0"></Label>
                 <Label [text]="folder.date | date:'medium'" column="1" row="1"></Label>
 
-                <Image class="ellipsis" src="res://ellipsish" width="50" column="3" row="0" rowSpan="2"></Image>
+                <Image class="ellipsis"
+                      *ngIf="folder.options" 
+                      src="res://ellipsish" 
+                      width="50" 
+                      column="3" 
+                      row="0" 
+                      rowSpan="2"
+                      [nsRouterLink]="['/home', folder.id]"></Image>
             </GridLayout>
         </ng-template>
     </ListView>

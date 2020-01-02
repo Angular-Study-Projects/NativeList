@@ -24,4 +24,8 @@ export class ListComponent implements OnInit {
 
         this.displayOfData = this.listService.list.asObservable()
     }
+
+    showOptions(data: Folder) {
+       
+    }
 }

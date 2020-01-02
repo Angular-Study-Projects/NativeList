@@ -1,31 +1,52 @@
-<GridLayout rows="auto,auto,*" columns="*,*">
+<!-- <GridLayout rows="auto, auto,*" columns="*,*"> -->
+<GridLayout rows="auto,*" columns="*,*">
 
-    <FlexboxLayout row="0" column="0" columnSpan="3" flexDirection="row" alignItems="center" justifyContent="flex-start">
+    <FlexboxLayout row="0" column="0" columnSpan="3" flexDirection="column" alignItems="flex-start" justifyContent="space-around">
+        <FlexboxLayout flexDirection="row" alignItems="center" justifyContent="flex-start">
 
-        <Image src="res://icon" width="30%"></Image>
+            <Image src="res://icon" width="30%"></Image>
 
-        <FlexboxLayout flexDirection="column" alignItems="flex-start" justifyContent="space-around">
-            <Label class="welcome" text="Bem Vindo"></Label>
-            <Label class="username" text="Username"></Label>
-            <Label textWrap="true" text="432 arquivos distribuidos em 45 pastas"></Label>
-        </FlexboxLayout>  
-       
-    </FlexboxLayout>
-   
-    <StackLayout row="1" column="0" columnSpan="3">
-        <Progress value="25" maxValue="100" backgroundColor="red" style="margin: 5 15 0 15;"></Progress>
+            <FlexboxLayout flexDirection="column" alignItems="flex-start" justifyContent="space-around">
+                <Label class="welcome" text="Bem Vindo"></Label>
+                <Label class="username" text="Username"></Label>
+                <Label textWrap="true" text="432 arquivos distribuidos em 45 pastas"></Label>
+
+            </FlexboxLayout>  
+        </FlexboxLayout>
+
+        <Progress value="25" maxValue="100" backgroundColor="red" style="margin: 5 15 0 15; width: 90%;"></Progress>
         <Label text="USADO 2.5GB DE 15GB" style="margin: 0 15 5 15;"></Label>
-        
-        <Label text="MINHAS PASTAS" class="my-folders"></Label>
 
-        <Button text="Home" class="btn" [nsRouterLink]="['/home']"></Button>     
 
-        <Button text="Logout" class="btn" [nsRouterLink]="['/items']"></Button> 
+    </FlexboxLayout>
+    
+    <ScrollView row="1" column="0" columnSpan="3">
+        <StackLayout >
+            
+            
+            <!-- <Label text="MINHAS PASTAS" class="my-folders"></Label> -->
 
-    </StackLayout>
+            <Button text="Caixa de Entrada" class="btn" [nsRouterLink]="['/home']"></Button>     
 
-    <StackLayout row="2" column="0" columnSpan="3">
+            <Button text="Favoritos" class="btn" [nsRouterLink]="['/items']"></Button> 
+
+            <Button text="Compartilhados Comigo" class="btn" [nsRouterLink]="['/home']"></Button>     
+
+            <Button text="Rascunho" class="btn" [nsRouterLink]="['/items']"></Button> 
+
+
+
+            <Button text="Home" class="btn" [nsRouterLink]="['/home']"></Button>     
+
+            <Button text="Logout" class="btn" [nsRouterLink]="['/items']"></Button> 
+
+            
+
+        </StackLayout>
+    </ScrollView>
+
+    <!-- <StackLayout row="2" column="0" columnSpan="3">
         <my-folder-list-component></my-folder-list-component>    
-    </StackLayout>
+    </StackLayout> -->
 
 </GridLayout>

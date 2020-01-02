@@ -10,6 +10,7 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { HomeModule } from "./pages/home/home.module";
 import { SideMenuComponent } from "./components/sidemenu/sidemenu.component";
 import { MyFolderListComponent } from "./components/sidemenu/myFolderList/myFolderList.component";
+import { FolderDetailsComponent } from "./components/list/folderDetails/folderDetails.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -32,7 +33,8 @@ import { MyFolderListComponent } from "./components/sidemenu/myFolderList/myFold
         ItemsComponent,
         ItemDetailComponent,
         SideMenuComponent,
-        MyFolderListComponent
+        MyFolderListComponent,
+        FolderDetailsComponent
     ],
     providers: [],
     schemas: [
