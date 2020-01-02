@@ -22,7 +22,7 @@ export class MyFolderListComponent implements OnInit {
     ngOnInit(): void {
         // this.displayOfData = this.listService.list
 
-        this.myList = this.listService.myList;
+        this.myList = this.listService.folderList;
 
         this.displayOfData = this.listService.list.asObservable()
     }

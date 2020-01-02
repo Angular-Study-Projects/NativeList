@@ -20,9 +20,9 @@ export class ListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.myList = this.listService.myList;
+        this.myList = this.listService.folderList;
 
-        this.displayOfData = this.listService.list
+        this.displayOfData = this.listService.list.asObservable()
     }
 
     onSearchBarLoaded(event) {
@@ -44,9 +44,10 @@ export class ListComponent implements OnInit {
         setTimeout(()=> {
             let text = searchBar.text;
 
-            // this.listService.filter( text )
+            this.listService.filter( text )
 
-            this.myList = [... this.listService.myList.filter(it => it.title.toLowerCase().startsWith(text.toLowerCase()))]
+            // this.myList = [... this.listService.myList.filter(it => it.title.toLowerCase().startsWith(text.toLowerCase()))]
+
 
         }, 100)
 
