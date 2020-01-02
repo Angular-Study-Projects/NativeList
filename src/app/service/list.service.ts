@@ -39,14 +39,11 @@ export class ListService {
         }
         else{
             this.list.next(this.myList.value)
-
-            console.log(this.list.value)
         }
     }
 
     add(_title:string, _date:number) {
         this.folderList.push({title: _title + " " + ++this.id, date: _date})
-        // this.myList = [... this.folderList];
 
         this.myList.next(this.folderList)
 

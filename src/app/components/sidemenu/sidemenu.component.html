@@ -1,6 +1,6 @@
-<GridLayout rows="auto,auto,*" columns="*,*,*">
+<GridLayout rows="auto,auto,*" columns="*,*">
 
-    <FlexboxLayout row="0" rowSpan="2" column="0" columnSpan="3" flexDirection="row" alignItems="center" justifyContent="flex-start">
+    <FlexboxLayout row="0" column="0" columnSpan="3" flexDirection="row" alignItems="center" justifyContent="flex-start">
 
         <Image src="res://icon" width="30%"></Image>
 
@@ -12,7 +12,7 @@
        
     </FlexboxLayout>
    
-    <StackLayout row="2" column="0" columnSpan="3">
+    <StackLayout row="1" column="0" columnSpan="3">
         <Progress value="25" maxValue="100" backgroundColor="red" style="margin: 5 15 0 15;"></Progress>
         <Label text="USADO 2.5GB DE 15GB" style="margin: 0 15 5 15;"></Label>
         
@@ -22,10 +22,10 @@
 
         <Button text="Logout" class="btn" [nsRouterLink]="['/items']"></Button> 
 
-        <ScrollView>
-            <my-folder-list-component></my-folder-list-component>    
-        </ScrollView>
-
     </StackLayout>
-    
+
+    <StackLayout row="2" column="0" columnSpan="3">
+        <my-folder-list-component></my-folder-list-component>    
+    </StackLayout>
+
 </GridLayout>

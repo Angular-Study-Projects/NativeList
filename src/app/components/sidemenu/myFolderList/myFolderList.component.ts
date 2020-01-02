@@ -13,18 +13,13 @@ import { Observable } from 'rxjs';;
 
 export class MyFolderListComponent implements OnInit {
 
-    myList: Folder[];
     displayOfData: Observable<any[]>
 
     constructor( private listService: ListService ){
     }
 
     ngOnInit(): void {
-        // this.displayOfData = this.listService.list
-
-        this.myList = this.listService.folderList;
-
-        this.displayOfData = this.listService.list.asObservable()
+        this.displayOfData = this.listService.myList.asObservable()
     }
 
 }

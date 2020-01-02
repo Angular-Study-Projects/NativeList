@@ -22,6 +22,14 @@ export class SearchBarComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    onSearchBarLoaded(event) {
+        if (event.object.android) {
+            event.object.dismissSoftInput();
+            event.object.android.clearFocus();
+            event.object.android.setFocusable(false);
+        }
+    }
+
     onSubmit(args) {
         const searchBar = args.object as SearchBar;
         console.log(`Searching for ${searchBar.text}`);
@@ -36,10 +44,6 @@ export class SearchBarComponent implements OnInit {
             this.listService.filter( text )
 
         }, 100)
-
-        // console.log(this.noResult)
-
-        // console.log(`Input changed! New value: ${searchBar.text}`);
     }
 
     onClear(args) {

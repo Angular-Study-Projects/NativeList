@@ -1,14 +1,5 @@
 <StackLayout>
 
-    <SearchBar 
-        (loaded)="onSearchBarLoaded($event)"
-        hint="Buscar arquivos ou pastas"
-        [text]="searchPhrase" (textChange)="onTextChanged($event)" 
-        (clear)="onClear($event)" (submit)="onSubmit($event)">
-    </SearchBar>
-
-    <breadcrumb-component></breadcrumb-component>
-
     <ListView [items]="displayOfData | async">
         <ng-template let-folder="item" let-index="index">
             <GridLayout columns="auto,*,auto" rows="*,*">
