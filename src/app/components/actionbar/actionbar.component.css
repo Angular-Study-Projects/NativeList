@@ -1,9 +1,9 @@
 .notifications {
-    padding: 2 7;
+    padding: 2 5;
     text-align: end;
     font-size: 13;
     font-weight: 800;
     color: white;
     background-color: red;
-    border-radius: 10;
+    border-radius: 5;
 }

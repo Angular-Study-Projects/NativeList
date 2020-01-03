@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, Injectable, AfterViewInit, OnInit, ChangeDetectorRef } from "@angular/core";
-import { DrawerTransitionBase, PushTransition, RadSideDrawer, DrawerStateChangingEventArgs, DrawerStateChangedEventArgs } from 'nativescript-ui-sidedrawer';
+import { DrawerTransitionBase, RadSideDrawer, DrawerStateChangingEventArgs, DrawerStateChangedEventArgs, PushTransition } from 'nativescript-ui-sidedrawer';
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular";
+
 
 @Component({
     selector: "ns-app",
@@ -16,7 +17,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     }
 
     @ViewChild(RadSideDrawerComponent, { static: false }) public drawerComponent: RadSideDrawerComponent;
-    private drawer: RadSideDrawer;
+    public drawer: RadSideDrawer;
 
     ngAfterViewInit() {
         this.drawer = this.drawerComponent.sideDrawer;
@@ -27,7 +28,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     ngOnInit() {
     }
 
-    public get sideDrawerTransition(): DrawerTransitionBase {
+    get sideDrawerTransition(): DrawerTransitionBase {
         return this._sideDrawerTransition;
     }
 
@@ -62,4 +63,5 @@ export class AppComponent implements AfterViewInit, OnInit {
     public onDrawerPan(args: DrawerStateChangedEventArgs) {
         this._currentNotification = "Drawer pan";
     }
+
 }

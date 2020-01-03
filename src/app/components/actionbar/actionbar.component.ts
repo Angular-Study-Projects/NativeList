@@ -19,15 +19,15 @@ export class ActionBarComponent implements OnInit{
         this.numberOfNotifications = 5 
     }
 
-
     public openDrawer() {
         this.sidebar.openDrawer()
-        // this.drawer.showDrawer();
     }
 
     public onCloseDrawerTap() {
         // this.drawer.closeDrawer();
     }
+
+    
 
 
  }
