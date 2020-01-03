@@ -11,6 +11,7 @@ import { HomeModule } from "./pages/home/home.module";
 import { SideMenuComponent } from "./components/sidemenu/sidemenu.component";
 import { MyFolderListComponent } from "./components/sidemenu/myFolderList/myFolderList.component";
 import { FolderDetailsComponent } from "./components/list/folderDetails/folderDetails.component";
+import { FavoritesModule } from "./pages/favorites/favorites.module";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -26,7 +27,8 @@ import { FolderDetailsComponent } from "./components/list/folderDetails/folderDe
         NativeScriptUISideDrawerModule,
         NativeScriptModule,
         AppRoutingModule,
-        HomeModule
+        HomeModule,
+        FavoritesModule
     ],
     declarations: [
         AppComponent,
@@ -34,7 +36,7 @@ import { FolderDetailsComponent } from "./components/list/folderDetails/folderDe
         ItemDetailComponent,
         SideMenuComponent,
         MyFolderListComponent,
-        FolderDetailsComponent
+        FolderDetailsComponent,
     ],
     providers: [],
     schemas: [

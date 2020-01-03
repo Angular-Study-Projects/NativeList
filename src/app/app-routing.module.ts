@@ -7,6 +7,7 @@ import { ItemDetailComponent } from "./item/item-detail.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { AddFolderComponent } from "./pages/home/addFolder/addFolder.component";
 import { FolderDetailsComponent } from "./components/list/folderDetails/folderDetails.component";
+import { FavoritesComponent } from "./pages/favorites/favorites.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -14,7 +15,8 @@ const routes: Routes = [
     { path: "item/:id", component: ItemDetailComponent },
     { path: "home", component: HomeComponent },
     { path: "home/:id", component: FolderDetailsComponent },
-    { path: "add", component: AddFolderComponent }
+    { path: "add", component: AddFolderComponent },
+    { path: "favorites", component: FavoritesComponent }
 ];
 
 @NgModule({

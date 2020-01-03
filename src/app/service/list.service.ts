@@ -43,7 +43,7 @@ export class ListService {
     }
 
     add(_title:string, _date:number) {
-        this.folderList.push({ id: ++this.id, title: _title, date: _date, isFavorite: false, options: false})
+        this.folderList.push({ id: ++this.id, title: _title, date: _date, isFavorite: true, options: false})
 
         this.myList.next(this.folderList)
 
