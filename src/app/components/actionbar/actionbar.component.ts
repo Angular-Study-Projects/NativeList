@@ -1,17 +1,33 @@
 import { Component, OnInit } from "@angular/core";
 
+import { AppComponent } from "~/app/app.component";
+
 @Component({
     selector: 'action-bar-component',
     templateUrl: 'actionbar.component.html',
     styleUrls: ['actionbar.component.css']
 })
 
-export class ActionBarComponent implements OnInit {
-    
+export class ActionBarComponent implements OnInit{
+
     numberOfNotifications: number
-    
-    constructor(){}
-    ngOnInit(){
-        this.numberOfNotifications = 4
+
+    constructor(private sidebar: AppComponent) {
     }
-}
+
+    ngOnInit() {
+        this.numberOfNotifications = 5 
+    }
+
+
+    public openDrawer() {
+        this.sidebar.openDrawer()
+        // this.drawer.showDrawer();
+    }
+
+    public onCloseDrawerTap() {
+        // this.drawer.closeDrawer();
+    }
+
+
+ }
