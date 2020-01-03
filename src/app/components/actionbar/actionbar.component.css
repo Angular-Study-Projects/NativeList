@@ -7,3 +7,12 @@
     background-color: red;
     border-radius: 5;
 }
+
+.menu-border {
+    border-width: 2;
+    width: 12%;
+    border-color: #295987;
+    margin: 15 0;
+    padding: 7;
+    border-radius: 5;
+}

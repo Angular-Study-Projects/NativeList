@@ -12,6 +12,7 @@ import { SideMenuComponent } from "./components/sidemenu/sidemenu.component";
 import { MyFolderListComponent } from "./components/sidemenu/myFolderList/myFolderList.component";
 import { FolderDetailsComponent } from "./components/list/folderDetails/folderDetails.component";
 import { FavoritesModule } from "./pages/favorites/favorites.module";
+import { ActionBarModule } from "./components/actionbar/actionbar.module";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -28,7 +29,8 @@ import { FavoritesModule } from "./pages/favorites/favorites.module";
         NativeScriptModule,
         AppRoutingModule,
         HomeModule,
-        FavoritesModule
+        FavoritesModule,
+        ActionBarModule
     ],
     declarations: [
         AppComponent,

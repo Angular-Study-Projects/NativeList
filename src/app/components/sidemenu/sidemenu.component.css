@@ -4,11 +4,11 @@ GridLayout {
 
 .welcome {
     font-size: 16;
-    font-weight: bolder;
+    font-weight: 400;
 }
 .username {
     font-size: 20;
-    font-weight: bold;
+    font-weight: 800;
 }
 .my-folders {
     margin: 5 15; 
