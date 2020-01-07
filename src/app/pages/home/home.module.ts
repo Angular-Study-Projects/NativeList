@@ -9,13 +9,15 @@ import { ButtonsComponent } from "~/app/components/buttons/buttons.component";
 import { AddFolderComponent } from "./addFolder/addFolder.component";
 import { SearchBarModule } from "~/app/components/searchbar/searchbar.module";
 import { ActionBarModule } from "~/app/components/actionbar/actionbar.module";
+import { BreadCrumbModule } from "~/app/components/breadcrumb/breadcrumb.module";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
         HomeRoutingModule,
         SearchBarModule,
-        ActionBarModule
+        ActionBarModule,
+        BreadCrumbModule
     ],
     declarations: [
         HomeComponent,
