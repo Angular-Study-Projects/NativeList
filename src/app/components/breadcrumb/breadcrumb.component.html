@@ -1,4 +1,15 @@
-<StackLayout style="padding: 10 20;">
+<!-- <StackLayout style="padding: 10 20;">
     <Label text="breadcrumb working"></Label>
 </StackLayout>
-
+ -->
+ <StackLayout style="padding: 10 5 10 25">
+    <DropDown #dd
+                backroundColor="red"
+                itemsTextAlignment="center"
+                [items]="items"
+                [(ngModel)]="selectedIndex"
+                (selectedIndexChanged)="onchange($event)"
+                (opened)="onopen()"
+                (closed)="onclose()"
+                ></DropDown>
+</StackLayout>
