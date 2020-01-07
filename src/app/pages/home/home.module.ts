@@ -21,7 +21,6 @@ import { ActionBarModule } from "~/app/components/actionbar/actionbar.module";
         HomeComponent,
         AddFolderComponent,
         ListComponent,
-        BreadCrumbComponent,
         ButtonsComponent
     ],
     schemas: [
