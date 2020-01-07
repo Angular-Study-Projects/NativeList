@@ -2,14 +2,30 @@
     <Label text="breadcrumb working"></Label>
 </StackLayout>
  -->
- <StackLayout style="padding: 10 5 10 25">
-    <DropDown #dd
-                backroundColor="red"
-                itemsTextAlignment="center"
-                [items]="items"
-                [(ngModel)]="selectedIndex"
-                (selectedIndexChanged)="onchange($event)"
-                (opened)="onopen()"
-                (closed)="onclose()"
-                ></DropDown>
+ <StackLayout style="padding: 10 5 10 18">
+    <GridLayout columns="auto,*" rows="auto">
+        <DropDown 
+            row="0"
+            column="1"
+            id="dd"
+            #dd
+            backroundColor="red"
+            itemsTextAlignment="center"
+            [items]="items"
+            [(ngModel)]="selectedIndex"
+            (selectedIndexChanged)="onchange($event)"
+            (opened)="onopen()"
+            (closed)="onclose()"
+            class="item-drop-down"
+            ></DropDown>
+
+        <Image (tap)="onopen()" row="0" column="0" src="res://arrowup" width="4%"></Image>
+        
+        <!-- <dd:DropDown col="0"></dd:DropDown> -->
+        <!-- <Button col="1"></Button> -->
+
+
+    </GridLayout>
+
+                <!-- <ListPicker [items]="years" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker> -->
 </StackLayout>
