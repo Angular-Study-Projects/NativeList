@@ -1,12 +1,23 @@
 <action-bar-component></action-bar-component>
 
-<GridLayout rows="*,auto">
+<GridLayout rows="*,auto" [class.dialogOpen]="dialogOpen">
     <StackLayout row="0">  
         <search-bar-component></search-bar-component>
         <breadcrumb-component></breadcrumb-component>
-        <list-component></list-component>
+        <list-component (dialogOpen)="showDialog()"></list-component>
     </StackLayout>
     <StackLayout row="1">  
         <buttons-component></buttons-component>
     </StackLayout>
+
+
+
+    <AbsoluteLayout class="dialog-wrapper">
+        <StackLayout class="dialog">
+            <Label class="h3" textWrap="true" text="Are you sure you want to delete this folder?"></Label>
+
+            <Button class="btn btn-danger" text="Delete"></Button>
+            <Button class="btn btn-outline" text="Cancel" (tap)="closeDialog()"></Button>
+        </StackLayout>
+    </AbsoluteLayout>
 </GridLayout>
