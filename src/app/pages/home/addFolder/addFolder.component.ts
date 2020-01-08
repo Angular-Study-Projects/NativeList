@@ -14,6 +14,7 @@ export class AddFolderComponent implements OnInit {
     title = ""
     isCreated: boolean
     invalidInput: boolean
+    clicked:boolean
     
     constructor(private listService: ListService, private _router: Router){}
 
@@ -21,6 +22,7 @@ export class AddFolderComponent implements OnInit {
         this.isCreated = false;
         this.invalidInput = false;
         this.title = "Nova Pasta"
+        this.clicked= true
     }
 
     update(args) {
@@ -30,16 +32,19 @@ export class AddFolderComponent implements OnInit {
     }
 
     saveFolder() {
-        this.listService.add(this.title, Date.now());
+        if(this.clicked) {
+            this.listService.add(this.title, Date.now());
 
-        if( this.title != "" || this.title != "" ){
-            setTimeout(() => {
-                this._router.navigate(['/home'])
-            }, 1000);
-            this.isCreated = true
-        }
-        else {
-            this.invalidInput = true;
+            if( this.title != "" || this.title != "" ){
+                setTimeout(() => {
+                    this._router.navigate(['/home'])
+                }, 1000);
+                this.isCreated = true
+            }
+            else {
+                this.invalidInput = true;
+            }
+            this.clicked = false
         }
     }
 }
