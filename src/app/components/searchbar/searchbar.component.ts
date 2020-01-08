@@ -15,7 +15,6 @@ export class SearchBarComponent implements OnInit {
     myList: Folder[] = [];
     noResult: boolean;
 
-
     constructor(private listService: ListService){
     }
     
@@ -37,6 +36,14 @@ export class SearchBarComponent implements OnInit {
 
     onTextChanged(args) {
         const searchBar = args.object as SearchBar;
+
+
+        if(searchBar.text != "") {
+            // this.page.addCss("SearchBar{font-style: italic}")
+        }
+        else {
+            // this.page.addCss("SearchBar{font-style: normal}")
+        }
         
         setTimeout(()=> {
             let text = searchBar.text;

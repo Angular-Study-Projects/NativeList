@@ -1,5 +1,5 @@
-<StackLayout>
-    <SearchBar 
+<StackLayout #searchbarView style="border-bottom-width: 2; border-color: #e8e8e8;">
+    <SearchBar style="font-size: 16; font-style: italic; height: 70;"
         (loaded)="onSearchBarLoaded($event)"
         hint="Buscar arquivos ou pastas"
         [text]="searchPhrase" (textChange)="onTextChanged($event)" 

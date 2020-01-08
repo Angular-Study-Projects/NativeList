@@ -26,8 +26,8 @@ export class ListComponent implements OnInit {
     }
 
     showOptions(data: Folder) {
-       setTimeout(()=>{
-           data.options=false;
-       }, 4000)
+    //    setTimeout(()=>{
+    //        data.options=false;
+    //    }, 4000)
     }
 }
