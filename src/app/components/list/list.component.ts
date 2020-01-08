@@ -1,7 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 import { ListService } from "~/app/service/list.service";
 import { Folder } from "~/app/service/folder";
-import { SearchBar } from "tns-core-modules/ui/search-bar";
 import { Observable } from "rxjs";
 
 
@@ -14,7 +13,9 @@ import { Observable } from "rxjs";
 export class ListComponent implements OnInit {
 
     myList: Folder[];
-    displayOfData: Observable<any[]>
+    displayOfData: Observable<any[]> 
+
+    @Output() dialogOpen: EventEmitter<boolean> = new EventEmitter();
 
     constructor( private listService: ListService ){
     }
@@ -30,4 +31,10 @@ export class ListComponent implements OnInit {
     //        data.options=false;
     //    }, 4000)
     }
+
+    openDialog(){
+        this.dialogOpen.emit(true);
+    }
+
+    
 }

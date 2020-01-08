@@ -8,11 +8,22 @@ import { Component, OnInit } from "@angular/core";
 
 export class HomeComponent implements OnInit {
 
+    dialogOpen: boolean
+
     constructor(){
 
     }
 
     ngOnInit(){
-        
+
     }
+
+    showDialog() {
+        this.dialogOpen = true;
+    }
+
+    closeDialog() {
+        this.dialogOpen = false;
+    }
+
 }
