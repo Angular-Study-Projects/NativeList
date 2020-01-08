@@ -3,10 +3,11 @@
 </StackLayout>
  -->
  <StackLayout style="padding: 10 5 10 18">
-    <GridLayout columns="auto,*" rows="auto">
+    <FlexboxLayout justifyContent="flex-start" alignItems="center" flexDirection="row">
+        <Image (tap)="onopen()"  src="res://arrowup" width="8%" style="margin-bottom: 3"></Image>
+        
         <DropDown 
-            row="0"
-            column="1"
+            
             id="dd"
             #dd
             backroundColor="red"
@@ -19,12 +20,11 @@
             class="item-drop-down"
             ></DropDown>
 
-        <Image (tap)="onopen()" row="0" column="0" src="res://arrowup" width="4%"></Image>
         
         <!-- <dd:DropDown col="0"></dd:DropDown> -->
         <!-- <Button col="1"></Button> -->
 
-    </GridLayout>
+    </FlexboxLayout>
 
                 <!-- <ListPicker [items]="years" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker> -->
 </StackLayout>
