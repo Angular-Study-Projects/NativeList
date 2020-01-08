@@ -25,8 +25,6 @@ export class BreadCrumbComponent implements OnInit {
     constructor(private route: Router) {}
 
     ngOnInit(){
-
-
         this.items = [];
         for (var i = 0; i < 5; i++) {
             this.items.push("INICIO / ... / Route " + i);

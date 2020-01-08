@@ -1,5 +1,26 @@
 .ellipsis {
-    border-width: 2;
+    border-width: 1;
     border-radius: 10;
-    border-color: #499ccf
+    border-color: #499ccf;
+    margin-right: 5;
 }
+
+.name {
+    margin: 10 16;
+}
+
+.folder-title {
+    font-size: 20;
+}
+
+FlexboxLayout Label {
+    margin-right: 10;
+    font-weight: 400;
+    font-size: 15;
+}
+
+Label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+

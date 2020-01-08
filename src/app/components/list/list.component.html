@@ -1,21 +1,21 @@
 <StackLayout>
-
+    <FlexboxLayout class="name" justifyContent="flex-start" alignItems="center">
+        <Label text="Nome"></Label>
+        <Image src="res://arrowdown" width="3%"></Image>
+    </FlexboxLayout>
     <ListView [items]="displayOfData | async">
         <ng-template let-folder="item" let-index="index">
-            <GridLayout columns="auto,*,auto" rows="*,*" (tap)="showOptions(folder); folder.options=true">
-                <Image src="res://icon" width="50" column="0" row="0" rowSpan="2"></Image>
+            <GridLayout columns="auto,*,auto" rows="*" (tap)="showOptions(folder); folder.options=true" style="min-height: 60;">
+                <Image src="res://folder" width="8%" column="0" row="0"  style="margin-right: 8;"></Image>
 
-                <Label [text]="folder.title" column="1" row="0"></Label>
-                <Label [text]="folder.date | date:'medium'" column="1" row="1"></Label>
+                <Label class="folder-title" [text]="folder.title" column="1" row="0" ></Label>
+                <!-- <Label [text]="folder.date | date:'medium'" column="1" row="1"></Label> -->
 
-                <Image class="ellipsis"
-                      *ngIf="folder.options" 
-                      src="res://ellipsish" 
-                      width="50" 
-                      column="3" 
-                      row="0" 
-                      rowSpan="2"
-                      [nsRouterLink]="['/home', folder.id]"></Image>
+                <Image column="3" row="0"   class="ellipsis"
+                    *ngIf="folder.options" 
+                    src="res://ellipsish" 
+                    width="35" 
+                    [nsRouterLink]="['/home', folder.id]"></Image>
             </GridLayout>
         </ng-template>
     </ListView>
