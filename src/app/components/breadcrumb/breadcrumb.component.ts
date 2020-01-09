@@ -20,20 +20,28 @@ export class BreadCrumbComponent implements OnInit {
 
     public selectedIndex = 1;
     public items: Array<string>;
-
+    public displayedPath: Array<string>;
 
     constructor(private route: Router) {}
 
     ngOnInit(){
         this.items = [];
         for (var i = 0; i < 5; i++) {
-            this.items.push("INICIO / ... / Route " + i);
+            this.items.push("Route " + i);
         }
+        this.displayedPath = this.items
     }
  
     public onchange(args: SelectedIndexChangedEventData) {
         console.log(`Drop Down selected index changed from ${args.oldIndex} to ${args.newIndex}`);
         // this.route.navigate(['favorites'])
+        
+        this.displayedPath = [... this.items]
+        this.displayedPath[args.newIndex] = "INICIO / ... / " + this.items[args.newIndex] 
+
+        this.displayedPath = [... this.displayedPath]
+
+        console.log(this.displayedPath[args.newIndex])
     }
  
     public onopen() {
