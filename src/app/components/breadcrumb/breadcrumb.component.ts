@@ -47,6 +47,9 @@ export class BreadCrumbComponent implements OnInit {
  
     public onopen() {
         console.log("Drop Down opened.");
+        setTimeout(()=>{
+            this.displayedPath = [... this.items]
+        }, 200)
     }
  
     public onclose() {
