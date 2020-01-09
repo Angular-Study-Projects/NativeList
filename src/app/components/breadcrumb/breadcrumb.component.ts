@@ -30,6 +30,7 @@ export class BreadCrumbComponent implements OnInit {
             this.items.push("Route " + i);
         }
         this.displayedPath = this.items
+        // this.displayedPath[this.selectedIndex] = "INICIO / ... / " + this.displayedPath[this.selectedIndex]
     }
  
     public onchange(args: SelectedIndexChangedEventData) {
